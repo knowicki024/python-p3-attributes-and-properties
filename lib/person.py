@@ -16,7 +16,9 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    def __init__(self, name, job):
+    def __init__(self, name="Guido", job="ITC"):
+        self._name = None
+        self._job = None
         self.name = name
         self.job = job
 
@@ -27,7 +29,7 @@ class Person:
     @name.setter
     def name(self, value):
         if self._is_valid_name(value):
-            self._name = value
+            self._name = value.title()
         else:
             print("Name must be string between 1 and 25 characters.")
 
@@ -45,5 +47,5 @@ class Person:
     def _is_valid_name(self,value):
         return isinstance(value,str) and 1 <= len(value) <= 25
     
-my_self = Person("Katie", "Legal")
+my_self = Person("Guido Van Rossum", "ITC")
 print(my_self.name)
