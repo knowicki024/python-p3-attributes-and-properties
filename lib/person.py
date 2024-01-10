@@ -16,13 +16,9 @@ APPROVED_JOBS = [
 ]
 
 class Person:
-    def __init__(self, name="Katie", job = "Legal"):
+    def __init__(self, name, job):
         self.name = name
         self.job = job
-        if not self._is_valid_name(name):
-            print( "Name must be string between 1 and 25 characters.")
-        if job not in APPROVED_JOBS:
-            print("Job must be in list of approved jobs.")
 
     @property
     def name(self):
